@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const { DB_HOST } = process.env;
-const PORT = 3001;
+const PORT = 3020;
 
 mongoose
-  .connect('mongodb+srv://valeri:8itBxyOWnNgSHM2o@cluster0.2665ccp.mongodb.net/superheroes?retryWrites=true&w=majority')
+  .connect(DB_HOST)
   .then(() =>
     app.listen(3001, () => {
       console.log(`Database connection successful on port ${PORT}`);
